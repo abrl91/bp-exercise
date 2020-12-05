@@ -11,14 +11,14 @@ export default function (path) {
 
     child.stdout.on('data', data => {
         result += data;
-        let split = data.split('\n');
-        split.forEach(row => {
+        const splitData = data.split('\n');
+        splitData.forEach(row => {
             try {
-                let json = JSON.parse(row);
+                const json = JSON.parse(row);
                 console.log(json);
                 dp.countEventType(json['event_type']);
                 dp.countWords(json['data']);
-                dp.updateDataLast60Sec(json['data'], json['event_type'],  json['timestamp']);
+                dp.updateDataLast60Sec(json['data'], json['event_type'], json['timestamp']);
             } catch (err) {
                 console.log('err, cannot read the type of data');
             }
