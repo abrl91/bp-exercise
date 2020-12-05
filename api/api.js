@@ -10,7 +10,7 @@ router.get('/wordsCount', ((req, res) => {
     console.log(wordsCount, 'wordsCount');
     res.send('hi from wordsCount');
 }));
-router.get('/eventCount', ((req, res) => {
+router.get('/eventsCount', ((req, res) => {
     const eventCount = dp.getEventTypeCount();
     console.log(eventCount, 'eventCount');
     res.send('hi from eventCount');

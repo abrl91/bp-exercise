@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/wordsCount', api);
-app.get('/eventCount', api);
+app.get('/eventsCount', api);
 app.get('/last60Sec', api);
 
 app.listen(PORT, () => console.log(`server is running on port ${PORT}`));
