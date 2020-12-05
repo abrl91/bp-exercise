@@ -1,21 +1,21 @@
 import {exec} from 'child_process';
 import DataProcessor from '../services/dataProcessor.js';
+// import EventEmitter from 'events';
+//cons dataEmitter = new EventEmitter();
 
 
 export default function (path) {
-    let result = '';
-
+    const dp = new DataProcessor();
     const child = exec(path);
+    let result = '';
 
     child.stdout.on('data', data => {
         result += data;
         let split = data.split('\n');
         split.forEach(row => {
             try {
-                console.log(row);
                 let json = JSON.parse(row);
                 console.log(json);
-                const dp = new DataProcessor();
                 dp.countEventType(json['event_type']);
                 dp.countWords(json['data']);
                 dp.updateDataLast60Sec(json['data'], json['timestamp']);

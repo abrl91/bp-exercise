@@ -1,5 +1,5 @@
-import Queue from "mnemonist";
-
+import pkg from 'mnemonist';
+const {Queue} = pkg;
 export default class DataProcessor {
 
     eventCount = {};
