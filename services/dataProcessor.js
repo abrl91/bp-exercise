@@ -1,9 +1,11 @@
 import pkg from 'mnemonist';
 const {Queue} = pkg;
+
 export default class DataProcessor {
 
     eventCount = {};
     wordsCount = {};
+
     dataLast60Sec = new Queue();
 
     countEventType (eventType) {
@@ -53,11 +55,11 @@ export default class DataProcessor {
         };
     }
 
-    countInAggregatingObject(object, fieldName) {
-        if (object[fieldName]) {
-            object[fieldName] = 1;
+    countInAggregatingObject(obj, fieldName) {
+        if (!obj[fieldName]) {
+            obj[fieldName] = 1;
         } else {
-            object[fieldName]++;
+            obj[fieldName]++;
         }
     }
 }

@@ -6,16 +6,23 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "test": "jest"
+  },
+  "jest": {
+    "verbose": true
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@jest/globals": "^26.6.2",
     "express": "^4.17.1",
     "mnemonist": "^0.38.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.12.7",
+    "jest": "^26.6.3",
     "nodemon": "^2.0.6"
   }
 }

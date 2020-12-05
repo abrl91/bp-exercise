@@ -6,9 +6,12 @@ requirements:
 dependencies: 
 * express
 * mnemonist
+* test: jest
 
 dev-dependencies:
 * nodemon
+* jest
+* @babel/preset-env
 
 running on develop: on terminal run
 
@@ -19,6 +22,11 @@ running without nodemon
 
 ```
 npm run start
+```
+
+tests
+```
+npm run test
 ```
 
 apis:

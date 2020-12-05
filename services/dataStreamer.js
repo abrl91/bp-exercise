@@ -18,7 +18,7 @@ export default function (path) {
                 console.log(json);
                 dp.countEventType(json['event_type']);
                 dp.countWords(json['data']);
-                dp.updateDataLast60Sec(json['data'], json['timestamp']);
+                dp.updateDataLast60Sec(json['data'], json['event_type'],  json['timestamp']);
             } catch (err) {
                 console.log('err, cannot read the type of data');
             }
