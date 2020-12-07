@@ -1,30 +1,30 @@
 # bp-exercise
 
-requirements: 
+Requirements: 
 * node version 14 or greater
 
-dependencies: 
+Dependencies: 
 * express
 * mnemonist
 * test: jest
 
-dev-dependencies:
+Dev-ependencies:
 * nodemon
 * jest
 * @babel/preset-env
 
-running on develop: on terminal run
+Running on develop: 
 
 ```
 npm run dev
 ```
-running without nodemon
+Running without nodemon
 
 ```
 npm run start
 ```
 
-tests
+Tests
 ```
 npm run test
 ```
