@@ -10,11 +10,22 @@ const app = express();
 const PORT = process.env.PORT || 8081;
 
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.send(`
+            <h1>Hi</h1>
+            <p>To get the events count go to: 
+                <a href="http://localhost:8081/events-count">events-count</a>
+            </p>
+            <p>To get the words count go to: 
+                <a href="http://localhost:8081/words-count">words-count</a>
+            </p>
+            <p>To get the events and the words that came on he last 60sec go to:
+                <a href="http://localhost:8081/last-60-sec">last-60-sec</a>
+            </p>
+        `);
 });
 
-app.use('/eventsCount', eventsCount);
-app.use('/wordsCount', wordsCount);
-app.use('/last60Sec', last60Sec);
+app.use('/events-count', eventsCount);
+app.use('/words-count', wordsCount);
+app.use('/last-60-sec', last60Sec);
 
 app.listen(PORT, () => console.log(`server is running on port ${PORT}`));

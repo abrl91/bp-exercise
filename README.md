@@ -8,7 +8,7 @@ Dependencies:
 * mnemonist
 * test: jest
 
-Dev-ependencies:
+Dev-dependencies:
 * nodemon
 * jest
 * @babel/preset-env
@@ -28,8 +28,9 @@ Tests
 ```
 npm run test
 ```
+Home Page: http://localhost:8081
 
 apis:
-* get eventsCount: http://localhost:8081/eventsCount
-* get wordsCount: http://localhost:8081/wordsCount
-* get last60Sec: http://localhost:8081/last60Sec
+* get eventsCount: http://localhost:8081/events-count
+* get wordsCount: http://localhost:8081/words-count
+* get last60Sec: http://localhost:8081/last-60-sec

@@ -12,20 +12,14 @@ export function dataStreamer(path) {
         const splitData = data.split('\n');
         splitData.forEach(row => {
             try {
-                const json = JSON.parse(row);
-                console.log(json);
-                dp.countEventType(json['event_type']);
-                dp.countWords(json['data']);
-                dp.updateDataLast60Sec(json['data'], json['event_type'], json['timestamp']);
+                const jsonData = JSON.parse(row);
+                console.log(jsonData);
+                dp.countEventType(jsonData['event_type']);
+                dp.countWords(jsonData['data']);
+                dp.updateDataLast60Sec(jsonData['data'], jsonData['event_type'], jsonData['timestamp']);
             } catch (err) {
                 console.log('err, cannot read the type of data');
             }
         });
     });
-
-    child.on('close', function () {
-        console.log('done');
-        console.log(result);
-    });
 }
-
