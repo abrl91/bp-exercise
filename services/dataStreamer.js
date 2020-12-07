@@ -1,7 +1,5 @@
 import {exec} from 'child_process';
 import DataProcessor from '../services/dataProcessor.js';
-// import EventEmitter from 'events';
-//cons dataEmitter = new EventEmitter();
 
 
 export default function (path) {

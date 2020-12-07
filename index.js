@@ -1,19 +1,19 @@
 import express from 'express';
-import api from './api/api.js';
-
-const app = express();
-const PORT = process.env.PORT || 8081;
-
+import eventsCount from './api/api.events-count.js';
+import wordsCount from './api/api.words-count.js';
+import last60Sec from './api/api.last-60-sec.js';
 import * as stream from './services/dataStreamer.js';
 stream.default('./generator-macosx-amd64');
 
+const app = express();
+const PORT = process.env.PORT || 8081;
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
 
-app.get('/wordsCount', api);
-app.get('/eventsCount', api);
-app.get('/last60Sec', api);
+app.use('/eventsCount', eventsCount);
+app.use('/wordsCount', wordsCount);
+app.use('/last60Sec', last60Sec);
 
 app.listen(PORT, () => console.log(`server is running on port ${PORT}`));

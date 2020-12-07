@@ -26,7 +26,9 @@ export default class DataProcessor {
 
     updateDataLast60Sec(word, event, timestamp)  {
         this.dataLast60Sec.enqueue({word, event, timestamp});
-        this.clearElementsFromMoreThan60Sec();
+        setTimeout(() => {
+            this.clearElementsFromMoreThan60Sec();
+        }, 0);
     }
 
     clearElementsFromMoreThan60Sec() {
