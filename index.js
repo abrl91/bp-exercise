@@ -2,8 +2,9 @@ import express from 'express';
 import eventsCount from './api/api.events-count.js';
 import wordsCount from './api/api.words-count.js';
 import last60Sec from './api/api.last-60-sec.js';
-import * as stream from './services/dataStreamer.js';
-stream.default('./generator-macosx-amd64');
+import { dataStreamer } from './services/dataStreamer.js';
+
+dataStreamer('./generator-macosx-amd64');
 
 const app = express();
 const PORT = process.env.PORT || 8081;

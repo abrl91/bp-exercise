@@ -1,8 +1,7 @@
 import express from 'express';
 const router = express.Router();
 
-import DataProcessor from "../services/dataProcessor.js";
-const dp = new DataProcessor();
+import { dp } from '../services/dataStreamer.js';
 
 router.get('/', ((req, res) => {
     const eventCount = dp.getEventTypeCount();

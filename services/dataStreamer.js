@@ -1,9 +1,9 @@
 import {exec} from 'child_process';
 import DataProcessor from '../services/dataProcessor.js';
 
+export const dp = new DataProcessor();
 
-export default function (path) {
-    const dp = new DataProcessor();
+export function dataStreamer(path) {
     const child = exec(path);
     let result = '';
 
